@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>PassGen</span>
+        </div>
+        <div class="theme-switch-wrapper">
+            <i class="fa-regular fa-sun theme-icon"></i>
+            <label class="theme-switch" for="checkbox" aria-label="Toggle dark/light theme">
+                <input type="checkbox" id="checkbox" />
+                <span class="slider round"></span>
+            </label>
+            <i class="fa-regular fa-moon theme-icon"></i>
+            <span class="theme-text">Dark Mode</span>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="header">
+            <h2>Password Generator</h2>
+            <p>Generate secure and randomized passwords</p>
+        </header>
+
+        <div class="result-container">
+            <textarea id="PasswordResult" readonly placeholder="Click Generate to create password" rows="1"></textarea>
+            <button class="icon-btn" id="quickCopyBtn" title="Quick Copy" aria-label="Quick copy password">
+                <i class="fa-regular fa-clipboard"></i>
+            </button>
+        </div>
+
+        <div class="settings">
+            <div class="setting">
+                <label for="Passwordlength">Password Length</label>
+                <div class="length-input-wrapper">
+                    <input type="number" id="Passwordlength" min="4" max="32" value="8" />
+                </div>
+            </div>
+            <div class="setting">
+                <label for="uppercase">Include Uppercase Letters</label>
+                <label class="custom-toggle" for="uppercase">
+                    <input type="checkbox" id="uppercase" checked />
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="setting">
+                <label for="lowercase">Include Lowercase Letters</label>
+                <label class="custom-toggle" for="lowercase">
+                    <input type="checkbox" id="lowercase" checked />
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="setting">
+                <label for="numbers">Include Numbers</label>
+                <label class="custom-toggle" for="numbers">
+                    <input type="checkbox" id="numbers" checked />
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="setting">
+                <label for="symbols">Include Symbols</label>
+                <label class="custom-toggle" for="symbols">
+                    <input type="checkbox" id="symbols" checked />
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-primary" id="generateBtn" type="button">
+                <i class="fa-solid fa-key"></i> <span>Generate</span>
+            </button>
+            <button class="btn btn-secondary" id="clipboardBtn" type="button">
+                <i class="fa-regular fa-clipboard"></i> <span>Copy</span>
+            </button>
+        </div>
+    </main>
+
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toastMessage" class="toast-message">Password copied successfully</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
